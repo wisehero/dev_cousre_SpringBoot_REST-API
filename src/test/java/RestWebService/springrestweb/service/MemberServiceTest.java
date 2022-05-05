@@ -1,6 +1,5 @@
 package RestWebService.springrestweb.service;
 
-import RestWebService.springrestweb.dto.CreateMemberRequest;
 import RestWebService.springrestweb.dto.RequestCreateMember;
 import RestWebService.springrestweb.model.Member;
 import RestWebService.springrestweb.repository.MemberRepository;
@@ -10,11 +9,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.jdbc.DataSourceBuilder;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import javax.sql.DataSource;

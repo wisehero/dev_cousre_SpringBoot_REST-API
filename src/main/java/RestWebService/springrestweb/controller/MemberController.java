@@ -1,15 +1,11 @@
 package RestWebService.springrestweb.controller;
 
-import RestWebService.springrestweb.dto.CreateMemberRequest;
 import RestWebService.springrestweb.dto.RequestCreateMember;
 import RestWebService.springrestweb.dto.ResponseMember;
 import RestWebService.springrestweb.model.Member;
 import RestWebService.springrestweb.service.MemberService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
@@ -35,5 +31,10 @@ public class MemberController {
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e);
         }
+    }
+
+    @DeleteMapping
+    public void clearMembers() {
+        
     }
 }

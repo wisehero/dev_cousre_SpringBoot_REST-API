@@ -1,13 +1,9 @@
 package RestWebService.springrestweb.service;
 
-import RestWebService.springrestweb.dto.CreateMemberRequest;
 import RestWebService.springrestweb.dto.RequestCreateMember;
 import RestWebService.springrestweb.model.Member;
 import RestWebService.springrestweb.repository.MemberRepository;
-import org.apache.tomcat.jni.Local;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
 
 @Service
 public class MemberService {
