@@ -11,11 +11,11 @@ public class Member {
     private final LocalDateTime createdAt;
     private Long memberId;
 
-    public Member(String memberName, String email, LocalDateTime createdAt) {
+    public Member(String memberName, String email) {
         setMemberId(++sequence);
         this.memberName = new MemberName(memberName);
         this.email = new Email(email);
-        this.createdAt = createdAt;
+        this.createdAt = LocalDateTime.now();
     }
 
     public Member(Long memberId, String memberName, String email, LocalDateTime createdAt) {

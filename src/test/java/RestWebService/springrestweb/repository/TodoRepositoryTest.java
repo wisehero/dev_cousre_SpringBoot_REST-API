@@ -40,7 +40,7 @@ class TodoRepositoryTest {
     @Test
     @DisplayName("Todo 생성 테스트")
     void insertTodo() {
-        Member memberA = new Member("kim", "iop1996@naver.com", LocalDateTime.now());
+        Member memberA = new Member("kim", "iop1996@naver.com");
         memberRepository.insert(memberA);
         Todo todoA = new Todo(memberA.getMemberId(), "코딩하기");
         Todo todoB = new Todo(memberA.getMemberId(), "운동하기");
@@ -56,7 +56,7 @@ class TodoRepositoryTest {
     @Test
     @DisplayName("멤버 ID로 Todo 찾기")
     void findAllTodoByMemberIDTest() {
-        Member memberA = new Member("kim", "iop1996@naver.com", LocalDateTime.now());
+        Member memberA = new Member("kim", "iop1996@naver.com");
         memberRepository.insert(memberA);
         Todo todoA = new Todo(memberA.getMemberId(), "코딩하기");
         Todo todoB = new Todo(memberA.getMemberId(), "운동하기");
@@ -73,7 +73,7 @@ class TodoRepositoryTest {
     @Test
     @DisplayName("Todo 제목 업데이트")
     void updateTodoTitleTest() {
-        Member memberA = new Member("kim", "iop1996@naver.com", LocalDateTime.now());
+        Member memberA = new Member("kim", "iop1996@naver.com");
         memberRepository.insert(memberA);
         Todo todoA = new Todo(memberA.getMemberId(), "코딩하기");
         todoRepository.insert(todoA);

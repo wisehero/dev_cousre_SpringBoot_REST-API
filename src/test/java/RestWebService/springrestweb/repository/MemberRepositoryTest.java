@@ -33,9 +33,9 @@ class MemberRepositoryTest {
     @Test
     @DisplayName("회원 저장 테스트")
     void insertTest() {
-        Member memberA = new Member("kim", "iop1996@naver.com", LocalDateTime.now());
-        Member memberB = new Member("kim", "iop1996@naver.com", LocalDateTime.now());
-        Member memberC = new Member("kim", "iop1996@naver.com", LocalDateTime.now());
+        Member memberA = new Member("kim", "iop1996@naver.com");
+        Member memberB = new Member("kim", "iop1996@naver.com");
+        Member memberC = new Member("kim", "iop1996@naver.com");
 
         memberRepository.insert(memberA);
         memberRepository.insert(memberB);
@@ -48,7 +48,7 @@ class MemberRepositoryTest {
     @Test
     @DisplayName("회원을 이름으로 조회")
     void findByNameTest() {
-        Member member = new Member("kim", "iop1996@naver.com", LocalDateTime.now());
+        Member member = new Member("kim", "iop1996@naver.com");
         memberRepository.insert(member);
 
         Member findMember = memberRepository.findByName("kim");
@@ -58,7 +58,7 @@ class MemberRepositoryTest {
     @Test
     @DisplayName("회원을 이메일로 조회")
     void findByEmailTest() {
-        Member member = new Member("kim", "iop1996@naver.com", LocalDateTime.now());
+        Member member = new Member("kim", "iop1996@naver.com");
         memberRepository.insert(member);
 
         Member findMember = memberRepository.findByEmail(member.getEmail().toString());
@@ -68,7 +68,7 @@ class MemberRepositoryTest {
     @Test
     @DisplayName("회원 삭제")
     void deleteTest() {
-        Member member = new Member("kim", "iop1996@naver.com", LocalDateTime.now());
+        Member member = new Member("kim", "iop1996@naver.com");
         Member insertedMember = memberRepository.insert(member);
 
         memberRepository.delete(insertedMember);
