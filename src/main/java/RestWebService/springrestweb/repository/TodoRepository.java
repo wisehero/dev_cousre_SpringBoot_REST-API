@@ -61,6 +61,10 @@ public class TodoRepository {
         jdbcTemplate.update("UPDATE todos SET title = :title WHERE todo_id = :todoId", toParamMap(todo));
     }
 
+    public void updateDone(Todo todo) {
+        jdbcTemplate.update("UPDATE todos SET done = :done WHERE todo_id = :todoId", toParamMap(todo));
+    }
+
     public void delete(Todo todo) {
         jdbcTemplate.update("DELETE FROM todos WHERE todo_id = :todoId", toParamMap(todo));
     }

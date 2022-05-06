@@ -45,4 +45,8 @@ public class Todo {
     public void changeTitle(String title) {
         this.title = title;
     }
+
+    public void changeDone(boolean done) {
+        this.done = !done;
+    }
 }

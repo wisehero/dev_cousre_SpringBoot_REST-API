@@ -31,7 +31,7 @@ class TodoRepositoryTest {
     @Autowired
     MemberRepository memberRepository;
 
-    @Test
+    @AfterEach
     void clear() {
         todoRepository.deleteAll();
         memberRepository.deleteAll();
@@ -86,9 +86,31 @@ class TodoRepositoryTest {
     }
 
     @Test
+    @DisplayName("Todo 완료 테스트")
+    void updateDoneTest() {
+        Member memberA = new Member("kim", "iop1996@naver.com");
+        memberRepository.insert(memberA);
+        Todo todoA = new Todo(memberA.getMemberId(), "코딩하기");
+        todoRepository.insert(todoA);
+
+        assertThat(todoA.isDone()).isFalse();
+
+        todoA.changeDone(todoA.isDone());
+        todoRepository.updateDone(todoA);
+        assertThat(todoA.isDone()).isTrue();
+    }
+
+    @Test
     @DisplayName("Todo 삭제 테스트")
     void deleteTest() {
+        Member memberA = new Member("kim", "iop1996@naver.com");
+        memberRepository.insert(memberA);
+        Todo todoA = new Todo(memberA.getMemberId(), "코딩하기");
+        todoRepository.insert(todoA);
 
+        todoRepository.delete(todoA);
+
+        assertThat(todoRepository.findAll().isEmpty()).isTrue();
     }
 
     @Configuration
