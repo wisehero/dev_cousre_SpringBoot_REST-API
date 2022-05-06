@@ -46,7 +46,7 @@ public class Todo {
         this.title = title;
     }
 
-    public void changeDone(boolean done) {
+    public void changeDone() {
         this.done = !done;
     }
 }

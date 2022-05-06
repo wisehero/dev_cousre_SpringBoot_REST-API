@@ -95,7 +95,7 @@ class TodoRepositoryTest {
 
         assertThat(todoA.isDone()).isFalse();
 
-        todoA.changeDone(todoA.isDone());
+        todoA.changeDone();
         todoRepository.updateDone(todoA);
         assertThat(todoA.isDone()).isTrue();
     }
