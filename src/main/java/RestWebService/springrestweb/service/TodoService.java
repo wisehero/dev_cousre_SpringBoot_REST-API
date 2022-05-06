@@ -16,8 +16,7 @@ public class TodoService {
     }
 
     public List<Todo> create(Todo todo) {
-        Todo newTodo = new Todo(todo.getTodoId(), todo.getTitle());
-        todoRepository.insert(newTodo);
+        todoRepository.insert(todo);
         return todoRepository.findByMemberId(todo.getMemberId());
     }
 
@@ -30,6 +29,7 @@ public class TodoService {
     }
 
     public List<Todo> updateTitle(Todo todo) {
+        todo.changeTitle(todo.getTitle());
         todoRepository.updateTodoTitle(todo);
         return todoRepository.findByMemberId(todo.getMemberId());
     }

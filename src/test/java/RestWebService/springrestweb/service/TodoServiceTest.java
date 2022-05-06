@@ -104,7 +104,11 @@ class TodoServiceTest {
     static class Config {
         @Bean
         public DataSource dataSource() {
-            var dataSource = DataSourceBuilder.create().url("jdbc:mysql://localhost/todoDB").username("root").password("xngosem258!").type(HikariDataSource.class).build();
+            var dataSource = DataSourceBuilder
+                    .create().url("jdbc:mysql://localhost/todoDB")
+                    .username("root").password("xngosem258!")
+                    .type(HikariDataSource.class)
+                    .build();
 
             return dataSource;
         }
