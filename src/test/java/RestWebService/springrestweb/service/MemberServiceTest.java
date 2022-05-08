@@ -34,6 +34,7 @@ public class MemberServiceTest {
 
         List<Member> all = memberRepository.findAll();
         Assertions.assertThat(all.size()).isEqualTo(1);
+        memberRepository.deleteAll();
     }
 
     @Configuration
