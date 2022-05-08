@@ -32,9 +32,4 @@ public class MemberController {
             return ResponseEntity.badRequest().body(e);
         }
     }
-
-    @DeleteMapping
-    public void clearMembers() {
-        
-    }
 }
